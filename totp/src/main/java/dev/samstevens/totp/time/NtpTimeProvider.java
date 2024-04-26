@@ -3,6 +3,7 @@ package dev.samstevens.totp.time;
 import dev.samstevens.totp.exceptions.TimeProviderException;
 import org.apache.commons.net.ntp.NTPUDPClient;
 import org.apache.commons.net.ntp.TimeInfo;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -54,7 +55,7 @@ public class NtpTimeProvider implements TimeProvider {
 
     private void checkHasDependency(String dependentClass) {
         try {
-            Class<?> ntpClientClass = Class.forName(dependentClass);
+            Class.forName(dependentClass);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("The Apache Commons Net library must be on the classpath to use the NtpTimeProvider.");
         }

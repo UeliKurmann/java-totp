@@ -1,7 +1,10 @@
 package dev.samstevens.totp.secret;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DefaultSecretGeneratorTest {
 
@@ -28,6 +31,7 @@ public class DefaultSecretGeneratorTest {
         String secret = generator.generate();
 
         // Test the string contains only A-Z, 2-7 with optional ending =s
+        System.out.println(secret);
         assertTrue(secret.matches("^[A-Z2-7]+=*$"));
 
         // And the length must be a multiple of 8

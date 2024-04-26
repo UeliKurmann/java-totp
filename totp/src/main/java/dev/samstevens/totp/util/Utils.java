@@ -1,9 +1,7 @@
 package dev.samstevens.totp.util;
 
-import org.apache.commons.codec.binary.Base64;
-
 public class Utils {
-    private static Base64 base64Codec = new Base64();
+    private static final java.util.Base64.Encoder encoder = java.util.Base64.getEncoder();
 
     // Class not meant to be instantiated
     private Utils() {
@@ -19,8 +17,7 @@ public class Utils {
      * @return The data URI string representing the image.
      */
     public static String getDataUriForImage(byte[] data, String mimeType) {
-        String encodedData = new String(base64Codec.encode(data));
-
+        String encodedData = new String(encoder.encode(data));
         return String.format("data:%s;base64,%s", mimeType, encodedData);
     }
 }

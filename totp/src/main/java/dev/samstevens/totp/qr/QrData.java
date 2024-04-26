@@ -2,7 +2,6 @@ package dev.samstevens.totp.qr;
 
 import dev.samstevens.totp.code.HashingAlgorithm;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
@@ -79,12 +78,7 @@ public class QrData {
             return "";
         }
 
-        try {
-            return URLEncoder.encode(text, StandardCharsets.UTF_8.toString()).replaceAll("\\+", "%20");
-        } catch (UnsupportedEncodingException e) {
-            // This should never throw, as we are certain the charset specified (UTF-8) is valid
-            throw new RuntimeException("Could not URI encode QrData.");
-        }
+        return URLEncoder.encode(text, StandardCharsets.UTF_8).replaceAll("\\+", "%20");
     }
 
     public static class Builder {

@@ -1,13 +1,13 @@
 package dev.samstevens.totp.secret;
 
-import org.apache.commons.codec.binary.Base32;
+import dev.samstevens.totp.util.Base32;
+
 import java.security.SecureRandom;
 
 @SuppressWarnings("WeakerAccess")
 public class DefaultSecretGenerator implements SecretGenerator {
 
     private final SecureRandom randomBytes = new SecureRandom();
-    private final static Base32 encoder = new Base32();
     private final int numCharacters;
 
     public DefaultSecretGenerator() {
@@ -23,7 +23,7 @@ public class DefaultSecretGenerator implements SecretGenerator {
 
     @Override
     public String generate() {
-        return new String(encoder.encode(getRandomBytes()));
+        return Base32.encode(getRandomBytes());
     }
 
     private byte[] getRandomBytes() {

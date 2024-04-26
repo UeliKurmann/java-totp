@@ -2,8 +2,12 @@ package dev.samstevens.totp.time;
 
 import dev.samstevens.totp.exceptions.TimeProviderException;
 import org.junit.jupiter.api.Test;
+
 import java.net.UnknownHostException;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class NtpTimeProviderTest {
 

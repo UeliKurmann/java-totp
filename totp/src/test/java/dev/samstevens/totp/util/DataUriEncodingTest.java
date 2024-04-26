@@ -1,9 +1,11 @@
 package dev.samstevens.totp.util;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.Base64;
+
 import static dev.samstevens.totp.util.Utils.getDataUriForImage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import java.util.Base64;
-import org.junit.jupiter.api.Test;
 
 public class DataUriEncodingTest {
 

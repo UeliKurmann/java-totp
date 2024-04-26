@@ -2,7 +2,8 @@ package dev.samstevens.totp.qr;
 
 import dev.samstevens.totp.code.HashingAlgorithm;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class QrDataTest {
 
