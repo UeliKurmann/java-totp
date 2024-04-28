@@ -4,6 +4,7 @@ import dev.samstevens.totp.exceptions.CodeGenerationException;
 
 public interface CodeGenerator {
     /**
+     * Generates a one-time code for the given parameters.
      * @param secret The shared secret/key to generate the code with.
      * @param counter The current time bucket number. Number of seconds since epoch / bucket period.
      * @return The n-digit code for the secret/counter.

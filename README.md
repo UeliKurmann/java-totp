@@ -1,3 +1,6 @@
+# This is a fork of Sam Stevens java-totp
+This repository is forked from https://github.com/samdjstevens/java-totp by Sam Stevens. The main purpose is to provide a version with updated dependencies.
+
 # Time-based One Time Password (MFA) Library for Java
 
 [![CircleCI](https://circleci.com/gh/samdjstevens/java-totp/tree/master.svg?style=svg&circle-token=10b865d8ba6091caba7a73a5a2295bd642ab79d5)](https://circleci.com/gh/samdjstevens/java-totp/tree/master) [![Coverage Status](https://coveralls.io/repos/github/samdjstevens/java-totp/badge.svg)](https://coveralls.io/github/samdjstevens/java-totp) [![Maven Central](https://img.shields.io/maven-central/v/dev.samstevens.totp/totp.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22dev.samstevens.totp%22%20AND%20a:%22totp%22)
@@ -11,8 +14,6 @@ Inspired by [PHP library for Two Factor Authentication](https://github.com/RobTh
 ## Requirements
 
 - Java 8+
-
-
 
 ## Spring Boot
 
@@ -28,9 +29,9 @@ To add this library to your java project using Maven, add the following dependen
 
 ```xml
 <dependency>
-  <groupId>dev.samstevens.totp</groupId>
+  <groupId>ch.javacamp.totp</groupId>
   <artifactId>totp</artifactId>
-  <version>1.7.1</version>
+  <version>1.8.0</version>
 </dependency>
 ```
 
@@ -40,7 +41,7 @@ To add the dependency using Gradle, add the following to the build script:
 
 ```
 dependencies {
-  compile 'dev.samstevens.totp:totp:1.7.1'
+  compile 'ch.javacamp.totp:totp:1.8.0'
 }
 ```
 
@@ -216,7 +217,7 @@ TimeProvider timeProvider = new NtpTimeProvider("pool.ntp.org", 5000);
 <dependency>
   <groupId>commons-net</groupId>
   <artifactId>commons-net</artifactId>
-  <version>3.6</version>
+  <version>3.10.0</version>
 </dependency>
 ```
 
@@ -224,7 +225,7 @@ TimeProvider timeProvider = new NtpTimeProvider("pool.ntp.org", 5000);
 
 ```
 dependencies {
-  compile 'commons-net:commons-net:3.6'
+  compile 'commons-net:commons-net:3.10.0'
 }
 ```
 

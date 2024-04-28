@@ -3,6 +3,8 @@ package dev.samstevens.totp.code;
 import dev.samstevens.totp.exceptions.CodeGenerationException;
 import dev.samstevens.totp.time.TimeProvider;
 
+import java.util.Objects;
+
 public class DefaultCodeVerifier implements CodeVerifier {
 
     private final CodeGenerator codeGenerator;
@@ -25,6 +27,8 @@ public class DefaultCodeVerifier implements CodeVerifier {
 
     @Override
     public boolean isValidCode(String secret, String code) {
+        Objects.requireNonNull(secret);
+        Objects.requireNonNull(code);
         // Get the current number of seconds since the epoch and
         // calculate the number of time periods passed.
         long currentBucket = Math.floorDiv(timeProvider.getTime(), timePeriod);

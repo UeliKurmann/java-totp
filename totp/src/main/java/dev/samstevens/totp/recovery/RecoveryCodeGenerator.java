@@ -19,7 +19,7 @@ public class RecoveryCodeGenerator {
     private static final int CODE_LENGTH = 16;
     private static final int GROUPS_NBR = 4;
   
-    private Random random = new SecureRandom();
+    private final Random random = new SecureRandom();
 
     public String[] generateCodes(int amount) {
         // Must generate at least one code
