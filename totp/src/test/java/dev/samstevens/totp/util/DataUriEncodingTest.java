@@ -17,7 +17,7 @@ public class DataUriEncodingTest {
         final String pngImage = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=";
         final byte[] imageData = Base64.getDecoder().decode(pngImage);
 
-        assertEquals("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", 
+        assertEquals("data:image/png;base64,"+pngImage,
                      getDataUriForImage(imageData, "image/png"));
     }
 }

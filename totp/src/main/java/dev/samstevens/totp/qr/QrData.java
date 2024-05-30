@@ -59,17 +59,17 @@ public class QrData {
 
     /**
      * @return The URI/message to encode into the QR image, in the format specified here:
-     * https://github.com/google/google-authenticator/wiki/Key-Uri-Format
+     * <a href="https://github.com/google/google-authenticator/wiki/Key-Uri-Format">Format</a>
      */
     public String getUri() {
         return "otpauth://" +
-                uriEncode(type) + "/" +
-                uriEncode(label) + "?" +
-                "secret=" + uriEncode(secret) +
-                "&issuer=" + uriEncode(issuer) +
-                "&algorithm=" + uriEncode(algorithm) +
-                "&digits=" + digits +
-                "&period=" + period;
+                uriEncode(getType()) + "/" +
+                uriEncode(getLabel()) + "?" +
+                "secret=" + uriEncode(getSecret()) +
+                "&issuer=" + uriEncode(getIssuer()) +
+                "&algorithm=" + uriEncode(getAlgorithm()) +
+                "&digits=" + getDigits() +
+                "&period=" + getPeriod();
     }
 
     private String uriEncode(String text)  {
